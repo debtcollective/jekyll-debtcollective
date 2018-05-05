@@ -1,0 +1,23 @@
+@mixin only-large() {
+  @media (min-width: $w-md) {
+    @content;
+  }
+}
+
+@mixin only-medium() {
+  @media (min-width: $w-sm) and (max-width: $w-md) {
+    @content;
+  }
+}
+
+@mixin only-small() {
+  @media (min-width: $w-xs) and (max-width: $w-sm) {
+    @content;
+  }
+}
+
+@mixin only-x-small() {
+  @media (max-width: $w-xs) {
+    @content;
+  }
+}

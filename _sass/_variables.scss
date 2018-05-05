@@ -19,7 +19,7 @@ $ex-red-tint: #ffb5c2 !default;
 // $ex-green-tint: #d8ffba !default;
 // $ex-purple-tint: #dcc6f7 !default;
 // $ex-orange-tint: #ffb78f !default;
-// $ex-yellow-tint: #ffef9e !default;
+$ex-yellow-tint: #ffef9e !default;
 
 // $highlighter: $ex-yellow-tint;
 $bg-blue: #dbf8ff !default;
@@ -37,3 +37,22 @@ $text-5: #f2f2f2 !default;
 
 $header-height-hero: 26.5rem;
 $header-height: 4.5rem;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * 0.875) !default;
+
+$h1-font-size: $font-size-base * 6.625 !default;
+$h2-font-size: $font-size-base * 3.25 !default;
+$h3-font-size: $font-size-base * 2 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.125 !default;
+$h6-font-size: $font-size-base * 0.8125 !default;
+
+/**
+ * Breakpoints
+ */
+
+$w-xs: 40em;
+$w-sm: 52em;
+$w-md: 64em;
