@@ -21,3 +21,21 @@
     @content;
   }
 }
+
+@mixin only-less-small() {
+  @media (max-width: $w-xs) {
+    @content;
+  }
+}
+
+@mixin only-less-medium() {
+  @media (max-width: $w-sm) {
+    @content;
+  }
+}
+
+@mixin only-less-large() {
+  @media (max-width: $w-md) {
+    @content;
+  }
+}

@@ -4,6 +4,12 @@
     color: $dc-red;
     padding-top: $font-size-base;
     padding-left: $font-size-base * 1.5;
+    padding-right: $font-size-base * 1.5;
+    @include only-less-medium() {
+      margin: auto;
+      padding-left: $font-size-base * 0.5;
+      padding-right: $font-size-base * 0.5;
+    }
   }
 
   &__header,
@@ -16,16 +22,21 @@
     }
     @include only-small() {
       margin-left: 1rem;
-      margin: auto;
     }
     @include only-x-small() {
-      margin: auto;
       margin-left: 0.5rem;
     }
     max-width: 37.5rem;
   }
 
   &__header {
+    @include only-small() {
+      margin-top: 2rem;
+    }
+    @include only-x-small() {
+      margin-top: 2rem;
+    }
+
     margin-top: 7rem;
     .News {
       &__title {
@@ -83,17 +94,9 @@
         left: 41rem;
       }
 
-      @mixin aside-width-pos-s-xs() {
+      @include only-less-medium() {
         margin-bottom: 3rem;
         margin-top: 1rem;
-      }
-
-      @include only-small() {
-        @include aside-width-pos-s-xs();
-      }
-
-      @include only-x-small() {
-        @include aside-width-pos-s-xs();
       }
 
       font-weight: 600;
