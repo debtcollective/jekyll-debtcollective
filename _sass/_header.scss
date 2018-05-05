@@ -1,0 +1,31 @@
+.SiteHeader {
+  &__hero {
+    background-color: $text-0;
+    color: $white;
+    height: $header-height-hero;
+    margin-top: $header-height;
+    width: 100%;
+  }
+  &__tag {
+    padding-top: 5rem;
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  &__title {
+    padding-top: 3rem;
+  }
+  &__stroke {
+    height: 2rem;
+    background-position: bottom;
+  }
+  &__nav {
+    padding-top: 6rem;
+  }
+  &__title,
+  &__tag,
+  &__nav {
+    margin: auto;
+    text-align: center;
+  }
+}
