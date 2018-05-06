@@ -1,0 +1,38 @@
+.Feed {
+  &__Profiles {
+    &__video {
+      &-wrapper {
+        iframe {
+          background-color: linear-gradient(
+            to bottom,
+            rbga(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.3)
+          );
+        }
+      }
+      &-text {
+        width: 66%;
+        margin: auto;
+        transform: translateY(-10rem);
+        &.dark {
+          color: $white;
+          filter: drop-shadow(0 0 1px black);
+        }
+        &.light {
+          color: $text-0;
+        }
+
+        &-interviewee {
+          font-weight: 600;
+        }
+        &-description {
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: $font-size-base * 3.25;
+  }
+}

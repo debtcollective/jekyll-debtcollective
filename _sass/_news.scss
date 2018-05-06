@@ -12,32 +12,9 @@
     }
   }
 
-  &__header,
-  &__content {
-    @include only-large() {
-      margin-left: 8rem;
-    }
-    @include only-medium() {
-      margin-left: 2rem;
-    }
-    @include only-small() {
-      margin-left: 1rem;
-    }
-    @include only-x-small() {
-      margin-left: 0.5rem;
-    }
-    max-width: 37.5rem;
-  }
+  @include page;
 
   &__header {
-    @include only-small() {
-      margin-top: 2rem;
-    }
-    @include only-x-small() {
-      margin-top: 2rem;
-    }
-
-    margin-top: 7rem;
     .News {
       &__title {
         margin-bottom: 1rem;
@@ -60,25 +37,11 @@
     }
   }
 
-  &__meta {
-    margin-top: 1rem;
-  }
-  &__date {
-    font-weight: 600;
-    font-size: $h6-font-size;
-  }
   &__lifted-from {
-    font-size: $font-size-sm;
-    padding-left: 3rem;
-    @include only-less-small() {
-      padding-left: 0;
-      padding-top: 0.125rem;
-      display: block;
-    }
+    @include page-meta-author;
   }
 
   &__content {
-    margin-top: 4rem;
     mark {
       background-color: $ex-yellow-tint;
       padding: 0;
@@ -115,13 +78,6 @@
         color: $dc-red;
         background-image: url($star-url);
         background-repeat: no-repeat;
-      }
-    }
-
-    &.copy {
-      p {
-        line-height: 1.7;
-        font-size: $font-size-sm;
       }
     }
   }

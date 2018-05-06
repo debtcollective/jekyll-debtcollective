@@ -1,9 +1,10 @@
 ---
 layout: news-analysis
-date: 07/05/2018
+date: 05/03/2018
 title: Banks want to take even more of your money from this headline head
 strike-title: Banks look to Break Government's Hold on Student Loan Market; Lobbying group pushes to limit how much individuals can borrow from federal program
 lifted-from: The Wall Street Journal
+category: analysis
 ---
 
 Private lenders are pushing to break up the government's near monopoly in the $100 billion-a-year student-loan market.  
