@@ -65,13 +65,13 @@
         &.tight {
           font-size: $font-size-base * 3.75;
           padding-left: $font-size-base * 1.5;
+          padding-top: $font-size-base * 0.25;
           @include only-x-small() {
             font-size: $font-size-base * 2;
           }
           @include only-less-medium() {
             padding-left: $font-size-base * 0.5;
           }
-          padding-top: $font-size-base * 0.25;
         }
       }
 
