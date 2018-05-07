@@ -13,41 +13,52 @@
   <hr />
 
   <div class="row">
-    <div class="col-md-9">
-      {% assign latest_video = site.profiles | where: "category","video" | sort: "date" | last %}
+      {% assign profiles = site.profiles | where: "category","video" | sort: "date" | reverse %}
+    <div class="col-md-8">
+      {% assign latest_video = profiles | first %}
 
-      {{latest_video.interviewee}}
-
-      {% assign frame_id = "video-" | append:latest_video.vimeo-id %}
-      {% assign sub_title_id = "sub-title-" | append:latest_video.vimeo-id %}
-      {% assign wrapper_id = "wrapper-" | append:latest_video.vimeo-id %}
-      {% assign player_link = "https://player.vimeo.com/video/" | append:latest_video.vimeo-id | append:"?color=24ba9d&title=0&portrait=0&byline=0" %}
-      {% assign player_link_playing = player_link | append:"&autoplay=1" %}
-      {% assign color_mod_class = latest_video.video-color | default: "dark" %}
+      {% assign safe_id = latest_video.archive-video-location | split:. | first %}
+      {% assign video_id = "video-" | append:safe_id %}
+      {% assign details_id = "details-" | append:safe_id %}
+      {% assign sub_title_id = "sub-title-" | append:safe_id %}
+      {% assign video_src = "https://archive.org/download/" | append:latest_video.archive-video-location %}
+      {% assign video_poster = "https://archive.org/download/" | append:latest_video.video-poster-location %}
 
       <div class="Feed__Profiles__video-latest">
-        <div class="Feed__Profiles__video-wrapper" id="{{wrapper_id}}">
-          <div style="padding:42.86% 0 0 0;position:relative;"><iframe src="{{player_link}}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div class="Feed__Profiles__video-wrapper">
+          <video
+            controls
+            playsinline
+            id="{{video_id}}"
+            src="{{video_src}}"
+            poster="{{video_poster}}"
+            data-plyr-config='{ "title": "{{latest_video.interviewee}}", "clickToPlay": true }'
+          ></video>
+          <div class="Feed__Profiles__video-details" id="{{details_id}}">
+            <div class="Feed__Profiles__video-title">
+              {{latest_video.interviewee}}
+            </div>
+            <div class="Feed__Profiles__video-description">
+              {{latest_video.video-description}}
+            </div>
+          </div>
         </div>
-        <div class="Feed__Profiles__video-text {{color_mod_class}}" id="{{sub_title_id}}">
-          <div class="Feed__Profiles__video-text-interviewee">{{latest_video.interviewee}}</div>
-          <div class="Feed__Profiles__video-text-description">{{latest_video.video-description}}</div>
-        </p>
         <script>
-          // Lets us put the sub title and gradient over the video and have it
-          // disappear once the user clicks on the video to make it 
-          // play... There are some weird buggy aspects of this but 
-          // it's the best I can come up with atm w/o resorting to 
-          // using AWS (which isn't going to be the best UX for the 
-          // organizers)
-          $('#{{wrapper_id}}').on('click', function() {
-            $('#{{wrapper_id}}').off('click')
-            $('#{{frame_id}}').attr('src', '{{player_link_playing}}')
-            $('${{sub_title_id}}').css('display', 'none')
+          const player = new Plyr('#{{video_id}}');
+          player.on('ready', function(e) {
+            const instance = e.detail.plyr;
+            const details = $('#{{details_id}}');
+            details.css('display', 'inline-block');
+            $('.plyr__controls').prepend(details[0]);
           })
         </script>
-        <!-- <p><a href="https://vimeo.com/{{latest_video.vimeo-id}}">Twin Shadow | Saturdays</a> from <a href="https://vimeo.com/debtcollective">Debt Collective</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
       </div>
+    </div>
+
+    <div class="col-md-4">
+      <ul>
+        
+      </ul>
     </div>
   </div>
 </div>
