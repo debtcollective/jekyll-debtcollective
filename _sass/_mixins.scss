@@ -1,5 +1,5 @@
 @mixin only-large() {
-  @media (min-width: $w-md) {
+  @media (min-width: $w-md) and (max-width: $w-lg) {
     @content;
   }
 }

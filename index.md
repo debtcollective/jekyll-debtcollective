@@ -2,4 +2,4 @@
 layout: default-hero
 ---
 
-fooBar
+index.md
