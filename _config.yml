@@ -18,7 +18,10 @@ collections:
     output: true
   news_analysis:
     output: true
+    permalink: /news-analysis/:name
   profiles:
     output: true
-  statements:
+    permalink: /profiles/:title
+  pages:
     output: true
+    permalink: /:name

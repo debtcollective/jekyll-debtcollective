@@ -7,7 +7,7 @@ layout: default-small-no-feed
 
   <div class="Profiles__video-feed container-fluid">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-12">
         {% assign latest_video = site.profiles | where: "category","video" | last %}
 
         {% assign safe_id = latest_video.archive-video-location | replace: '.', '-' | replace: '/', '-' %}
@@ -52,6 +52,11 @@ layout: default-small-no-feed
   <div class="Profiles__BigFeed-wrapper">
     <div class="container">
       <div class="row">
+        <div class="col-lg-12 mt-3">
+          <h3>Our Latest Member Interviews</h3>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-9">
           {% assign profile = site.profiles[0] %}
           {%- include profiles-big-feed-item.html -%}
@@ -68,6 +73,14 @@ layout: default-small-no-feed
           {% assign profile = site.profiles[2] %}
           {%- include profiles-big-feed-item.html -%}
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <a class="btn btn-outline-light" href="/profiles/all">see more interviews</a>
       </div>
     </div>
   </div>

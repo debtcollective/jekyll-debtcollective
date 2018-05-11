@@ -25,6 +25,13 @@
     }
 
     .Profiles__video {
+      &-wrapper {
+        max-width: 60rem;
+        @include at-least-medium {
+          min-width: 60rem;
+          margin: auto;
+        }
+      }
       &-details {
         opacity: 1;
         display: none;
@@ -75,6 +82,7 @@
         width: 9rem;
         background-color: $text-3;
         margin-right: 2rem;
+        margin-bottom: 3rem;
       }
 
       &-name {

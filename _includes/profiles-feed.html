@@ -39,7 +39,7 @@
               Latest Video Profile
             </div>
             <div class="Feed__Profiles__video-title">
-              {{latest_video.interviewee}}
+              <a class="nostyle" href="{{ latest_video.url | relative_url }}">{{latest_video.interviewee}}</a>
             </div>
             <div class="Feed__Profiles__video-description">
               {{latest_video.video-description}}
@@ -62,50 +62,12 @@
       <div class="Feed__Profiles__latest">
         <h4 class="Feed_Profiles__latest-headline">Latest Member Interviews</h4>
         {% assign profiles = site.profiles | where: "category", "profile" | reverse %}
-        {% assign profile1 = profiles[0] %}
-        {% assign profile2 = profiles[1] %}
 
         <ul class="Feed__Profiles__latest-list">
-          {% if profile1 %}
-            <li class="Feed__Profiles__latest-list-item">
-              <div class="Feed__Profiles__latest-list-item-picture float-left">
-                <img src="{{profile1.interviewee-picture}}" alt="{{profile1.interviewee}} picture" />
-              </div>
-              <div class="">
-                <h5 class="Feed__Profiles__latest-list-item-name">
-                  {{profile1.interviewee}}
-                </h6>
-                <div class="Feed__Profiles__latest-list-item-sub-title">
-                  {{profile1.sub-title}}
-                </div>
-                <div class="Feed__Profiles__latest-list-item-metadata">
-                    {%- assign date_format = "%b %-d, %Y" -%}
-                    {{ profile1.date | date: date_format }}
-                    <span class="Feed__Profiles__latest-list-item-metadata-interviewer">{{profile1.interviewer}}</span>
-                </div>
-              </div>
-            </li>          
-          {% endif %}
-          {% if profile2 %}
-            <li class="Feed__Profiles__latest-list-item">
-              <div class="Feed__Profiles__latest-list-item-picture float-left">
-                <img src="{{profile2.interviewee-picture}}" alt="{{profile2.interviewee}} picture" />
-              </div>
-              <div class="">
-                <h5 class="Feed__Profiles__latest-list-item-name">
-                  {{profile2.interviewee}}
-                </h6>
-                <div class="Feed__Profiles__latest-list-item-sub-title">
-                  {{profile2.sub-title}}
-                </div>
-                <div class="Feed__Profiles__latest-list-item-metadata">
-                    {%- assign date_format = "%b %-d, %Y" -%}
-                    {{ profile2.date | date: date_format }}
-                    <span class="Feed__Profiles__latest-list-item-metadata-interviewer">{{profile2.interviewer}}</span>
-                </div>
-              </div>
-            </li>
-          {% endif %}
+          {% assign profile = profiles[0] %}
+          {%- include profiles-feed-item.html -%}
+          {% assign profile = profiles[1] %}
+          {%- include profiles-feed-item.html -%}
         </ul>
       </div>
     </div>

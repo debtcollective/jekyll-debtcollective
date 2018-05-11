@@ -71,7 +71,7 @@
 }
 
 @mixin page-margins() {
-  @include only-large() {
+  @include at-least-medium() {
     margin-left: 8rem;
   }
   @include only-medium() {

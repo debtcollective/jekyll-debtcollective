@@ -1,10 +1,13 @@
 ---
 layout: profile
-date: 14/05/2018
+date: 27/04/2018
 interviewer: Interviewer Name
-interviewee: Samantha Turnpike
+interviewee: Nathan Hornes
 sub-title: This could be a quote or something from the person that goes here, more content
-category: profile
+category: video
+archive-video-location: silicon_valley/silicon_valley.mp4
+video-poster-location: silicon_valley/silicon_valley.thumbs/silicon_valley_000045.jpg
+video-description: This would be a short intro blurb description thing for the above video (perhaps). There definitely needs to be at least a bit.
 ---
 
 Looking back, can you talk a little bit about what you have learned as an organizer over the last few years? You could talk about what you've learned about yourself, how you have grown or struggled personally or what you learned about our political system while campaigning.  
